@@ -39,7 +39,7 @@ INSTALLED_APPS = (
     'apps.fb',
     'apps.account',
     'apps.trainers',
-    'clients',
+    'apps.clients',
 )
 
 MIDDLEWARE_CLASSES = (
