@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^thank-you/$', TemplateView.as_view(template_name="thankyou.html"), name="thankyou"),
     url(r'^/error/$', TemplateView.as_view(template_name="error.html"), name="error"),
     url(r'^$', TemplateView.as_view(template_name="index.html"), name="home"),
+    url(r'^trainers', include('apps.trainers.urls')),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += patterns('',

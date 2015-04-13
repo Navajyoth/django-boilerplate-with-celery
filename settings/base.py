@@ -38,7 +38,8 @@ INSTALLED_APPS = (
     'compressor',
     'apps.fb',
     'apps.account',
-    'apps.trainers,
+    'apps.trainers',
+    'clients',
 )
 
 MIDDLEWARE_CLASSES = (
