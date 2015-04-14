@@ -1,7 +1,7 @@
 from django.db import models
-from appps.account.base import UserProfileBase
+from apps.account.base import UserProfileBase
 from apps.trainers.models import Trainer
-
+from django.utils import timezone
 
 class Client(UserProfileBase):
     trainer = models.ForeignKey(Trainer, related_name='clients')
@@ -20,14 +20,12 @@ class Client(UserProfileBase):
 
 
 class MedicalHistory(models.Model):
-    client = models.ForeignKey(Client, related_name='medical histories')
-    time_of_injury = models.DateTimeField(
-        default=timezone.now, verbose='Hospital Injury'
-    )
+    client = models.ForeignKey(Client, related_name='histories')
+    time_of_injury = models.DateTimeField(default=timezone.now)
     comments = models.CharField(max_length=512)
 
 
 class ClientFeed(models.Model):
     message = models.CharField(max_length=512)
     datetime = models.DateTimeField(default=timezone.now)
-    client = models.ForeignKey(Client, related_name='Client Feed')
+    client = models.ForeignKey(Client, related_name='feeds')
