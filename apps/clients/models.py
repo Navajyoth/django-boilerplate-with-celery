@@ -19,15 +19,11 @@ class Client(UserProfileBase):
     constant_back_pain = models.BooleanField(default=False)
     currently_pregnant = models.BooleanField(default=False)
     weekly_workout_schedule = models.CharField(max_length=25)
-
-
-class MedicalHistory(models.Model):
-    client = models.ForeignKey(Client, related_name='histories')
     time_of_injury = models.DateTimeField(default=timezone.now)
     comments = models.CharField(max_length=512)
 
 
-class ClientFeed(models.Model):
+class Feeds(models.Model):
     message = models.CharField(max_length=512)
     datetime = models.DateTimeField(default=timezone.now)
     client = models.ForeignKey(Client, related_name='feeds')
