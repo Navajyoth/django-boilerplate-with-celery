@@ -3,7 +3,7 @@ from django.conf import settings
 from django.utils import timezone
 
 from apps.account.base import UserProfileBase
-from apps.clients.models import Client
+# from apps.clients.models import Client
 # Create your models here.
 
 
