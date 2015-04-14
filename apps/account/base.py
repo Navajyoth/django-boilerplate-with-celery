@@ -18,18 +18,18 @@ GENDER_OPTS = (
 class UserProfileBase(models.Model):
     user = models.OneToOneField(User, related_name="%(class)s_profile", null=True, blank=True)
     first_name = models.CharField(max_length=64)
-    middle_name = models.CharField(max_length=64, blank=True, null=True)
+    # middle_name = models.CharField(max_length=64, blank=True, null=True)
     last_name = models.CharField(max_length=64)
     email = models.CharField(max_length=128)
     mobile = models.CharField(max_length=64, null=True, blank=True, validators = v.mobile.validators)
-    address = models.CharField(max_length=512, null=True, blank=True)
-    city = models.CharField(max_length=64, null=True, blank=True)
-    country = models.CharField(max_length=64, null=True, blank=True)
+    # address = models.CharField(max_length=512, null=True, blank=True)
+    # city = models.CharField(max_length=64, null=True, blank=True)
+    # country = models.CharField(max_length=64, null=True, blank=True)
     gender = models.PositiveSmallIntegerField(choices=GENDER_OPTS, default=0, verbose_name="Gender")
     dob = models.DateField(null=True, blank=True)
   
-    created = models.DateTimeField(default=timezone.now, verbose_name="Joined On")
-    modified = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(default=timezone.now, verbose_name="TRAINING SINCE")
+    # modified = models.DateTimeField(auto_now=True)
 
     def add_log(self):
         return self.user.add_log()
