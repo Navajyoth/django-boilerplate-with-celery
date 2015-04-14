@@ -10,8 +10,13 @@ import django.core.validators
 class Migration(migrations.Migration):
 
     dependencies = [
+<<<<<<< HEAD
         ('trainers', '0001_initial'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+=======
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+        ('trainers', '0001_initial'),
+>>>>>>> 01436e48bde9b817f4f4836f84fdd4be04570563
     ]
 
     operations = [
@@ -38,8 +43,11 @@ class Migration(migrations.Migration):
                 ('constant_back_pain', models.BooleanField(default=False)),
                 ('currently_pregnant', models.BooleanField(default=False)),
                 ('weekly_workout_schedule', models.CharField(max_length=25)),
+<<<<<<< HEAD
                 ('time_of_injury', models.DateTimeField(default=django.utils.timezone.now)),
                 ('comments', models.CharField(max_length=512)),
+=======
+>>>>>>> 01436e48bde9b817f4f4836f84fdd4be04570563
                 ('trainer', models.ForeignKey(related_name='clients', to='trainers.Trainer')),
                 ('user', models.OneToOneField(related_name='client_profile', null=True, blank=True, to=settings.AUTH_USER_MODEL)),
             ],
@@ -56,4 +64,16 @@ class Migration(migrations.Migration):
                 ('client', models.ForeignKey(related_name='feeds', to='clients.Client')),
             ],
         ),
+<<<<<<< HEAD
+=======
+        migrations.CreateModel(
+            name='MedicalHistory',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('time_of_injury', models.DateTimeField(default=django.utils.timezone.now)),
+                ('comments', models.CharField(max_length=512)),
+                ('client', models.ForeignKey(related_name='histories', to='clients.Client')),
+            ],
+        ),
+>>>>>>> 01436e48bde9b817f4f4836f84fdd4be04570563
     ]
