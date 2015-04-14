@@ -30,4 +30,4 @@ class MedicalHistory(models.Model):
 class ClientFeed(models.Model):
     message = models.CharField(max_length=512)
     datetime = models.DateTimeField(default=timezone.now)
-client = models.ForeignKey(Client, related_name='Client Feed')
+    client = models.ForeignKey(Client, related_name='Client Feed')
