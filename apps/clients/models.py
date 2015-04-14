@@ -1,8 +1,4 @@
 from django.db import models
-<<<<<<< HEAD
-from django.utils import timezone
-=======
->>>>>>> 6832366d529ee5122a268272ca9093f48de54d18
 
 from apps.account.base import UserProfileBase
 from apps.trainers.models import Trainer

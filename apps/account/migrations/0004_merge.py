@@ -7,12 +7,9 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('clients', '0001_initial'),
+        ('account', '0003_auto_20150414_0955'),
+        ('account', '0003_auto_20150414_0745'),
     ]
 
     operations = [
-        migrations.RenameModel(
-            old_name='ClientFeed',
-            new_name='Feeds',
-        ),
     ]
