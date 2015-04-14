@@ -13,7 +13,7 @@ class Client(UserProfileBase):
     goal_achieved = models.BooleanField(default=False)
     wake_up_time = models.DateTimeField(default=timezone.now)
     bed_time = models.DateTimeField(default=timezone.now)
-    sit_more_than_30hrs/week = models.BooleanField(default=False)
+    sit_more_than_30hrs_per_week = models.BooleanField(default=False)
     constant_back_pain = models.BooleanField(default=False)
     currently_pregnant = models.BooleanField(default=False)
     weekly_workout_schedule = models.CharField(max_length=25)
