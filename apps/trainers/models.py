@@ -8,8 +8,8 @@ from apps.account.base import UserProfileBase
 
 
 class Trainer(UserProfileBase):
-    photo = models.FileField(upload_to='images/trainers')
-    monthly_rate = models.PositiveSmallIntegerField(max_length=4)
-    month_rate_3 = models.PositiveSmallIntegerField(max_length=4)
-    month_rate_6 = models.PositiveSmallIntegerField(max_length=4)
-    month_rate_12 = models.PositiveSmallIntegerField(max_length=4)
+    photo = models.FileField(upload_to='images/trainers', blank=True)
+    monthly_rate = models.PositiveSmallIntegerField(blank=True)
+    month_rate_3 = models.PositiveSmallIntegerField(blank=True)
+    month_rate_6 = models.PositiveSmallIntegerField(blank=True)
+    month_rate_12 = models.PositiveSmallIntegerField(blank=True)
