@@ -38,9 +38,9 @@ class UserProfileBase(models.Model):
         return self.user.add_log()
 
     # @property
-    # def get_email(self):
+    # def email(self):
     #     print 1
-    #     return self.user.emai
+    #     return self.user.email
 
     @property
     def name(self):

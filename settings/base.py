@@ -40,6 +40,8 @@ INSTALLED_APPS = (
     'apps.account',
     'apps.trainers',
     'apps.clients',
+    'apps.tasks',
+    'apps.exercises',
 )
 
 MIDDLEWARE_CLASSES = (

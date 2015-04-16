@@ -17,6 +17,8 @@ urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name="index.html"), name="home"),
     url(r'^trainers', include('apps.trainers.urls')),
     url(r'^clients', include('apps.clients.urls')),
+    url(r'^tasks', include('apps.tasks.urls')),
+    url(r'^exercises', include('apps.exercises.urls')),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += patterns('',
