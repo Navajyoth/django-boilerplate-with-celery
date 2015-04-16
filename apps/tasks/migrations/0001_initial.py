@@ -8,7 +8,8 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('clients', '0003_client_email'),
+        ('clients', '0003_auto_20150416_1246'),
+        ('exercises', '0001_initial'),
     ]
 
     operations = [
@@ -20,6 +21,7 @@ class Migration(migrations.Migration):
                 ('count', models.PositiveSmallIntegerField(default=0)),
                 ('comment', models.CharField(max_length=256)),
                 ('client', models.ForeignKey(related_name='tasks', to='clients.Client')),
+                ('excercise', models.ForeignKey(related_name='tasks', to='exercises.Exercise')),
             ],
         ),
     ]
