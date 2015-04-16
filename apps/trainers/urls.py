@@ -1,9 +1,9 @@
 from django.conf.urls import patterns, url
 
-from apps.trainers import views
+from apps.trainers.views import TrainerListView
 
 urlpatterns = patterns('',
-    url(r'^$', views.home, name='home'),
+    url(r'^$', TrainerListView.as_view(), name='home'),
 
 
 
