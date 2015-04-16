@@ -4,7 +4,9 @@ from apps.account.base import UserProfileBase
 from apps.trainers.models import Trainer
 from django.utils import timezone
 
+
 class Client(UserProfileBase):
+    photo = models.FileField(upload_to='images/clients',blank=True)
     trainer = models.ForeignKey(Trainer, related_name='clients')
     height = models.CharField(max_length=7)
     weight = models.CharField(max_length=7)
@@ -22,7 +24,7 @@ class Client(UserProfileBase):
     comments = models.CharField(max_length=512)
 
 
-class Feeds(models.Model):
+class Feed(models.Model):
     message = models.CharField(max_length=512)
     datetime = models.DateTimeField(default=timezone.now)
     client = models.ForeignKey(Client, related_name='feeds')

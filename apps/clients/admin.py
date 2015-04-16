@@ -1,7 +1,8 @@
 from django.contrib import admin
 
-from .models import Client, Feeds
+from apps.clients.models import Client, Feed
 # Register your models here.
 
 admin.site.register(Client)
-admin.site.register(Feeds)
+admin.site.register(Feed)
+
