@@ -20,8 +20,5 @@ class Migration(migrations.Migration):
                 ('token', models.CharField(max_length=256)),
                 ('user', models.OneToOneField(to=settings.AUTH_USER_MODEL)),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
     ]

@@ -26,8 +26,11 @@ class Migration(migrations.Migration):
                 ('dob', models.DateField(null=True, blank=True)),
                 ('created', models.DateTimeField(default=django.utils.timezone.now, verbose_name=b'TRAINING SINCE')),
                 ('modified', models.DateTimeField(auto_now=True)),
-                ('photo', models.FileField(upload_to=b'/media/')),
-                ('rate', models.IntegerField(default=b'Monthly', max_length=4, choices=[(b'Monthly', 150), (b'Month_Rate_3', 405), (b'Month_Rate_6', 765), (b'Month_Rate_12', 1440)])),
+                ('photo', models.FileField(upload_to=b'images/trainers', blank=True)),
+                ('monthly_rate', models.PositiveSmallIntegerField(blank=True)),
+                ('month_rate_3', models.PositiveSmallIntegerField(blank=True)),
+                ('month_rate_6', models.PositiveSmallIntegerField(blank=True)),
+                ('month_rate_12', models.PositiveSmallIntegerField(blank=True)),
                 ('user', models.OneToOneField(related_name='trainer_profile', null=True, blank=True, to=settings.AUTH_USER_MODEL)),
             ],
             options={

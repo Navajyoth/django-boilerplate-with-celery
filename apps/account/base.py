@@ -32,7 +32,7 @@ class UserProfileBase(models.Model):
     dob = models.DateField(null=True, blank=True)
     created = models.DateTimeField(
         default=timezone.now, verbose_name="TRAINING SINCE")
-    # modified = models.DateTimeField(auto_now=True)
+    modified = models.DateTimeField(auto_now=True)
 
     def add_log(self):
         return self.user.add_log()

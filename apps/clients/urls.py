@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, url
 
-from apps.clients import views 
+from apps.clients.views import ClientListView
 
 urlpatterns= patterns('',
-    url(r'^$', views.home),
+    url(r'^$', ClientListView.as_view(),name='client_index'),
     )
