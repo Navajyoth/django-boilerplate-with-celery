@@ -7,3 +7,9 @@ class ExerciseSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Exercise
+
+class ExerciseMiniSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Exercise
+        fields = ['id', 'name', 'type']
