@@ -3,14 +3,13 @@ from django.http import HttpResponse
 
 from rest_framework import generics
 from rest_framework import serializers
+from rest_framework import viewsets
+
 
 from apps.tasks.models import Task
 from apps.tasks.serializers import TaskSerializer
-# Create your views here.
 
-# def home(request):
-#     return HttpResponse('site under construction')
 
-class TaskView(generics.ListCreateAPIView):
+class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
