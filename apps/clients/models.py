@@ -19,9 +19,11 @@ class Client(UserProfileBase):
     sit_more_than_30hrs_per_week = models.BooleanField(default=False)
     constant_back_pain = models.BooleanField(default=False)
     currently_pregnant = models.BooleanField(default=False)
-    weekly_workout_schedule = models.CharField(max_length=25)
+    weekly_workout_schedule = models.CharField(max_length=25,blank=True)
     time_of_injury = models.DateTimeField(default=timezone.now)
-    comments = models.CharField(max_length=512)
+    comments = models.CharField(max_length=512,blank=True)
+    def __str__(self):
+        return self.email
 
 
 class Feed(models.Model):
