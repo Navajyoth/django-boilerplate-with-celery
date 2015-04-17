@@ -57,8 +57,7 @@ class UserProfileBase(models.Model):
 
     def _update_user(self, *args, **kwargs):
         if not self.user:
-            self.user = User.objects.create_user(email=self.email,
-                                                 username=self.email,
+            self.user = User.objects.create_user(email=self.email,                                                 
                                                  name=self.name,
                                                  password='abcd1234')
             super(UserProfileBase, self).save(*args, **kwargs)

@@ -6,7 +6,7 @@ from django.utils import timezone
 
 
 class Client(UserProfileBase):
-    photo = models.FileField(upload_to='images/clients',blank=True)
+    photo = models.FileField(upload_to='images/clients',null=True,blank=True)
     trainer = models.ForeignKey(Trainer, related_name='clients')
     height = models.CharField(max_length=7)
     weight = models.CharField(max_length=7)
