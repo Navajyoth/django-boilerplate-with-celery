@@ -62,7 +62,7 @@ class UserProfileBase(models.Model):
                                                  name=self.name,
                                                  password='abcd1234')
             super(UserProfileBase, self).save(*args, **kwargs)
-        self.user.name = self.name
+        self.user.first_name = self.first_name
         self.user.email = self.email
         self.user.save()
 
