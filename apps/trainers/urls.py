@@ -1,10 +1,10 @@
 from django.conf.urls import patterns, url
 
-from apps.trainers.views import TrainerListView
+from rest_framework.routers import DefaultRouter
 
-urlpatterns = patterns('',
-    url(r'^$', TrainerListView.as_view(), name='home'),
-
+from apps.trainers import views
 
 
-    )
+router = DefaultRouter()
+router.register(r'trainers', views.TrainerViewSet)
+urlpatterns = router.urls
