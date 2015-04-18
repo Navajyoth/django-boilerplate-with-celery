@@ -5,4 +5,3 @@ from apps.clients.models import Client, Feed
 
 admin.site.register(Client)
 admin.site.register(Feed)
-
