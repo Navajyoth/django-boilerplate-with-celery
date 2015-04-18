@@ -9,6 +9,3 @@ router.register(r'tasks', views.TaskViewSet)
 
 
 urlpatterns = router.urls
-# urlpatterns = patterns('',
-#                        url(r'^$', TaskView.as_view(), name='task_list'),
-#                        )

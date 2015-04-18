@@ -13,9 +13,8 @@ from rest_framework import viewsets
 from apps.clients.serializers import ClientSerializer
 from apps.feeds.serializers import FeedSerializer
 from apps.tasks.serializers import TaskSerializer
-from apps.clients.models import Client #Feed
+from apps.clients.models import Client
 from apps.tasks.models import Task
-# from apps.clients.serializers import ClientFeedSerializer
 
 
 class ClientViewSet(viewsets.ModelViewSet):
@@ -28,22 +27,15 @@ def client_task_list(request, client_id, year=None, month=None, day=None):
     client = get_object_or_404(Client, id=client_id)
     date = datetime.date(int(year), int(month), int(day))
     if year:
-<<<<<<< HEAD
-        client_tasks_of_day = client.tasks.filter(date=date)
-    # print client_tasks_of_day
-=======
         client_tasks_of_day = client.tasks.filter(date=date).order_by('index')
     print client_tasks_of_day
->>>>>>> origin/master
     serializer = TaskSerializer(client_tasks_of_day, many=True)
-    # print 'hello'
-    # print serializer
     return Response(serializer.data)
 
 
-@api_view(['GET','PUT','DELETE'])
+@api_view(['GET', 'PUT', 'DELETE'])
 def client_feed_list(request, client_id):
-    client = get_object_or_404(Client, id=client_id)     
+    client = get_object_or_404(Client, id=client_id)
     client_feed = client.feeds.order_by('datetime')
-    serializer = FeedSerializer(client_feed, many=True)      
+    serializer = FeedSerializer(client_feed, many=True)
     return Response(serializer.data)

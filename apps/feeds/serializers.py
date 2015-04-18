@@ -4,9 +4,8 @@ from apps.clients.serializers import ClientMiniSerializer
 
 
 class FeedSerializer(serializers.ModelSerializer):
-    client=ClientMiniSerializer()
-
+    client = ClientMiniSerializer()
 
     class Meta:
         model = Feed
-        Fields =['client','datetime','message']
+        Fields = ['client', 'datetime', 'message']

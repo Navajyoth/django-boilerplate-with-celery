@@ -8,8 +8,5 @@ router = DefaultRouter()
 router.register(r'feeds', views.FeedViewSet)
 
 urlpatterns = patterns('',
-                       # url(
-                       #     r'clients/(?P<client_id>\d+)/feeds/$',
-                       #     views.feed_list, name='client_feed_list_per_day'),
                        )
-urlpatterns  += router.urls
+urlpatterns += router.urls

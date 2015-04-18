@@ -18,12 +18,6 @@ BLOOD_GRP = (
     (9, "Others"),
 )
 
-<<<<<<< HEAD
-# [(a, a) for i, a in  enumerate["A+", "B+"]]
-=======
-[(a, a) for a in ["A+", "B+"]]
->>>>>>> origin/master
-
 
 class Client(UserProfileBase):
     photo = models.FileField(upload_to='images/clients', null=True, blank=True)
@@ -52,12 +46,3 @@ class Client(UserProfileBase):
 
     def __str__(self):
         return self.email
-
-
-# class Feed(models.Model):
-#     message = models.CharField(max_length=512)
-#     datetime = models.DateTimeField(default=timezone.now)
-#     client = models.ForeignKey(Client, related_name='feeds')
-
-#     def __str__(self):
-#         return self.message
