@@ -28,8 +28,13 @@ def client_task_list(request, client_id, year=None, month=None, day=None):
     client = get_object_or_404(Client, id=client_id)
     date = datetime.date(int(year), int(month), int(day))
     if year:
+<<<<<<< HEAD
         client_tasks_of_day = client.tasks.filter(date=date)
     # print client_tasks_of_day
+=======
+        client_tasks_of_day = client.tasks.filter(date=date).order_by('index')
+    print client_tasks_of_day
+>>>>>>> origin/master
     serializer = TaskSerializer(client_tasks_of_day, many=True)
     # print 'hello'
     # print serializer
