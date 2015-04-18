@@ -18,18 +18,18 @@ BLOOD_GRP = (
     (9,"Others"),
         )
 
-[(a, a) for a in  ["A+", "B+"]]
+# [(a, a) for i, a in  enumerate["A+", "B+"]]
 
 
 class Client(UserProfileBase):
     photo = models.FileField(upload_to='images/clients',null=True,blank=True)
     trainer = models.ForeignKey(Trainer, related_name='clients')
-    height = models.CharField(max_length=7)
-    weight = models.CharField(max_length=7)
+    height = models.CharField(max_length=10)
+    weight = models.CharField(max_length=10)
     bloodtype = models.PositiveSmallIntegerField(
         choices=BLOOD_GRP, default=0, verbose_name="blood group")
     occupation = models.CharField(max_length=30)
-    goal_weight = models.CharField(max_length=7)
+    goal_weight = models.CharField(max_length=10)
     goal_achieved = models.BooleanField(default=False)
     wake_up_time = models.DateTimeField(default=timezone.now,blank=True)
     bed_time = models.DateTimeField(default=timezone.now,blank=True,null=True)
@@ -49,7 +49,10 @@ class Client(UserProfileBase):
         return self.email
 
 
-class Feed(models.Model):
-    message = models.CharField(max_length=512)
-    datetime = models.DateTimeField(default=timezone.now)
-    client = models.ForeignKey(Client, related_name='feeds')
+# class Feed(models.Model):
+#     message = models.CharField(max_length=512)
+#     datetime = models.DateTimeField(default=timezone.now)
+#     client = models.ForeignKey(Client, related_name='feeds')
+
+#     def __str__(self):
+#         return self.message

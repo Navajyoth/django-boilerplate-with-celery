@@ -14,5 +14,9 @@ urlpatterns = patterns('',
                        url(
                            r'^clients/(?P<client_id>\d+)/tasks/(?P<year>\d{4})/(?P<month>\d{2})/(?P<day>\d+)/$',
                            views.client_task_list, name='client-task-list-per-day'),
-                       )
+                       url(
+                           r'clients/(?P<client_id>\d+)/feeds/$',
+                           views.client_feed_list, name='client_feed_list_per_day'),)
+
 urlpatterns += router.urls
+

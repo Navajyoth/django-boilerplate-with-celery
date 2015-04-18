@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'apps.clients',
     'apps.tasks',
     'apps.exercises',
+    'apps.feeds'
 )
 
 MIDDLEWARE_CLASSES = (

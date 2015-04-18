@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Client, Feed
+from .models import Client #Feed
 
 
 class ClientSerializer(serializers.ModelSerializer):
@@ -13,10 +13,11 @@ class ClientMiniSerializer(serializers.ModelSerializer):
         model = Client
         fields = ['id', 'first_name', 'last_name']
 
-class ClientFeedSerializer(serializers.ModelSerializer):
+# class ClientFeedSerializer(serializers.ModelSerializer):
 
-    class Meta:
-        model = Feed
+#     class Meta:
+#         model = Feed
+#         fields = ['datetime','message']
 
 
 
