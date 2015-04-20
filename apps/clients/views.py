@@ -10,13 +10,14 @@ from rest_framework.response import Response
 from rest_framework import viewsets
 
 from apps.clients.serializers import ClientMedicalSerializer
-# from apps.clients.serializers import TaskCommentSerializer
+from apps.trainers.serializers import TrainerMiniSerializer
 from apps.clients.serializers import ClientSerializer
 from apps.clients.serializers import ClientGoalSerializer
 from apps.feeds.serializers import FeedSerializer
 from apps.tasks.serializers import TaskSerializer
 from apps.clients.models import Client
 from apps.tasks.models import Task
+from apps.trainers.models import Trainer
 # from apps.trainers.models import
 
 
@@ -59,6 +60,15 @@ def client_medical_history(request,client_id):
     # print comment
     # # comment_serializer = TaskCommentSerializer(comment)
     # # json = medical_serializer.data + comment_serializer.data
+    return Response(serializer.data)
+
+@api_view(['GET','POST'])
+def trainer_selection(request,client_id):
+    trainer = get_object_or_404(Client, id=client_id)
+    
+    # trainer = Trainer.objects.all()
+    serializer = TrainerMiniSerializer(trainer)
+
     return Response(serializer.data)
 
 

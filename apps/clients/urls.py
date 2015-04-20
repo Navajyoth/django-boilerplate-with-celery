@@ -23,6 +23,8 @@ urlpatterns = patterns('',
 
                        url(r'clients/(?P<client_id>\d+)/medical_history/$',
                            views.client_medical_history, name='client_medical_history'),
+
+                       url(r'clients/(?P<client_id>\d+)/trainer_selection/$',views.trainer_selection,name='trainer_selection')
                        )
 
 
