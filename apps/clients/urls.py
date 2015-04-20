@@ -16,7 +16,14 @@ urlpatterns = patterns('',
                            views.client_task_list, name='client-task-list-per-day'),
                        url(
                            r'clients/(?P<client_id>\d+)/feeds/$',
-                           views.client_feed_list, name='client_feed_list_per_day'),)
+                           views.client_feed_list, name='client_feed_list_per_day'),
+
+                       url(r'clients/(?P<client_id>\d+)/goals/$',
+                           views.client_goal, name='client_goal'),
+
+                       url(r'clients/(?P<client_id>\d+)/medical_history/$',
+                           views.client_medical_history, name='client_medical_history'),
+                       )
+
 
 urlpatterns += router.urls
-

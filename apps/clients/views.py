@@ -9,12 +9,15 @@ from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework import viewsets
 
-
+from apps.clients.serializers import ClientMedicalSerializer
+# from apps.clients.serializers import TaskCommentSerializer
 from apps.clients.serializers import ClientSerializer
+from apps.clients.serializers import ClientGoalSerializer
 from apps.feeds.serializers import FeedSerializer
 from apps.tasks.serializers import TaskSerializer
 from apps.clients.models import Client
 from apps.tasks.models import Task
+# from apps.trainers.models import
 
 
 class ClientViewSet(viewsets.ModelViewSet):
@@ -23,7 +26,7 @@ class ClientViewSet(viewsets.ModelViewSet):
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
-def client_task_list(request, client_id, year=None, month=None, day=None):
+def client_task_list(request, client_id, year=None, month=None, day=None):    
     client = get_object_or_404(Client, id=client_id)
     date = datetime.date(int(year), int(month), int(day))
     if year:
@@ -35,7 +38,31 @@ def client_task_list(request, client_id, year=None, month=None, day=None):
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def client_feed_list(request, client_id):
+    print request.GET       
     client = get_object_or_404(Client, id=client_id)
     client_feed = client.feeds.order_by('datetime')
     serializer = FeedSerializer(client_feed, many=True)
     return Response(serializer.data)
+
+@api_view(['GET','POST'])
+def  client_goal(request,client_id):     
+     client = get_object_or_404(Client, id=client_id)     
+     serializer = ClientGoalSerializer(client)    
+     return Response(serializer.data)
+
+@api_view(['GET','POST'])
+def client_medical_history(request,client_id):
+    
+    client = get_object_or_404(Client, id=client_id)
+    serializer = ClientMedicalSerializer(client)
+    # comment = client.tasks.comment
+    # print comment
+    # # comment_serializer = TaskCommentSerializer(comment)
+    # # json = medical_serializer.data + comment_serializer.data
+    return Response(serializer.data)
+
+
+
+
+
+
