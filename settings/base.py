@@ -68,7 +68,7 @@ STATICFILES_FINDERS = (
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -109,9 +109,9 @@ DATE_FORMAT = "%Y-%m-%d"
 TEMPLATE_LOADERS = ('django.template.loaders.filesystem.Loader',
  'django.template.loaders.app_directories.Loader')
 
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
-)
+#TEMPLATE_DIRS = (
+#    os.path.join(BASE_DIR, 'templates'),
+#)
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = '/media/'
