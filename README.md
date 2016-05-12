@@ -21,6 +21,7 @@ Installation:
 
 Server
  * Django
+ * Celery 
  * Rest Framework
 
 Client
@@ -29,4 +30,3 @@ Client
  * Twitter Bootstrap
  * Bootstrap Material Design
  * Font Awesome
-
