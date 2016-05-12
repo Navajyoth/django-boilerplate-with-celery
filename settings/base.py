@@ -42,7 +42,9 @@ INSTALLED_APPS = (
     'apps.clients',
     'apps.tasks',
     'apps.exercises',
-    'apps.feeds'
+    'apps.feeds',
+    'kombu.transport.django',
+    'django_extensions'
 )
 
 MIDDLEWARE_CLASSES = (
